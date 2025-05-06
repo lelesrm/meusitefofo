@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!-- Declaração: Diz ao navegador que o arquivo é HTML5 -->
+<html lang="pt-BR"><!-- Raiz: Início do documento HTML, idioma português do Brasil --><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">   <!-- Cabeçalho: Vai o título e coisas técnicas como estilos -->
+
+    <meta charset="UTF-8">   <!-- Permite usar acentos e caracteres especiais -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsivo --> 
+
+    <title>Meu site fofo</title>   <!-- Título: nome que aparece na aba do navegador -->
+
+    <style>   /* Início do CSS: tudo que deixa o site bonito */
+
+        body {   /* Estilo do corpo da página */
+            background-color: #ffe6f0; /* Cor de fundo rosa claro */
+            color: #d63384;            /* Cor do texto */
+            font-family: 'Arial', sans-serif; /* Fonte mais bonitinha */
+            text-align: center;       /* Centraliza o conteúdo */
+            padding: 40px;            /* Espaçamento interno em volta do conteúdo */
+            margin: 0;                /* Remove margem padrão do navegador */
+        }
+
+        h1 {   /* Estilo do título principal */
+            font-size: 3em;  /* Tamanho grandão no título */
+            margin-bottom: 20px; /* Espaço abaixo do título */
+        }
+
+        p {   /* Estilo dos parágrafos */
+            font-size: 1.5em;  /* Tamanho médio do texto */
+            background-color: #fff0f5; /* Fundo claro pro parágrafo */
+            padding: 20px;  /* Espaçamento interno no parágrafo */
+            border-radius: 15px; /* Borda arredondada */
+            border: 2px dashed #ff69b4;  /* Borda rosa tracejada */
+            display: inline-block; /* Faz o parágrafo ocupar apenas o necessário */
+            margin-bottom: 30px;/* Espaço abaixo do parágrafo */
+        }
+        }
+        button {
+            background-color: #ffb6c1; /* Fundo do botão */
+            color: white; /* Cor da letra do botão */
+            border: none; /* Sem borda externa */
+            padding: 15px 25px; /* Tamanho do botão (altura x largura) */
+            font-size: 1em; /* Tamanho da letra no botão */
+            border-radius: 10px; /* Bordas arredondadas no botão */
+            cursor: pointer; /* Muda o cursor pra mãozinha quando passa em cima */
+            margin: 10px; /* Espaço ao redor do botão */
+            transition: background-color 0.3s; /* Suaviza mudança de cor ao passar o mouse */
+        }
+
+        button:hover {
+            background-color: #ff69da; /* Muda a cor do botão ao passar o mouse */
+        }
+
+        #mensagem {
+            display: none; /* Começa invisível, só aparece quando clicar no botão */
+            font-size: 1.3em; /* Tamanho da frase fofa */
+            margin-top: 20px; /* Espaço acima da frase */
+        }
+        audio {
+            display: none; /* Esconde o player de áudio */
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;/* Reduz tamanho do título em telas pequenas */
+            }
+
+            p {
+                font-size: 1.2em;/* Reduz o texto em celulares */
+
+                padding: 15px;
+            }
+
+            button {
+                font-size: 0.9em;/* Diminui o tamanho do botão no celular */
+                padding: 12px 20px;
+            }
+        }
+
+    </style>  <!-- Fim do CSS -->
+
+</head>  <!-- Fim do cabeçalho -->
+
+<body>   <!-- Corpo: onde aparece o conteúdo visível do site -->
+
+    <h1>oiii mo 💖</h1>   <!-- Título do site -->
+    <p>para fabricio meu amor gostoso</p>   <!-- Texto do parágrafo -->
+
+    <!-- Botão para mostrar mensagem -->
+    <br> <!-- Quebra de linha -->
+    <button onclick="mostrarMensagem()">clique para uma mensagem fofa 💌</button>
+    <!-- FRASE que aparece só depois de clicar no botão -->
+    <div id="mensagem">vc é a razão do meu sorriso💕</div>
+
+    <!-- Botão para tocar música -->
+    <br>
+    <button onclick="tocarMusica()">ouvir musiquinha 💗</button>
+     <!-- ÁUDIO escondido que será tocado pelo botão acima -->
+    <audio id="musica">
+        <source src="Meu%20site%20fofo_arquivos/musica.mp3" type="audio/mpeg"> <!-- Caminho do arquivo de música -->
+        Seu navegador não suporta áudio.<!-- Texto caso o navegador seja antigo -->
+    </audio>
+
+ <!-- SCRIPT: parte que faz os botões funcionarem (JavaScript) -->
+    <!-- Scripts em JavaScript -->
+    <script>
+         // Quando o botão de mensagem for clicado
+        function mostrarMensagem() {
+            document.getElementById("mensagem").style.display = "block";
+              // Mostra o texto escondido
+        }
+  // Quando o botão da música for clicado
+        function tocarMusica() {
+            const musica = document.getElementById("musica");
+            musica.play();// Toca a música
+        }
+    </script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+  
+
+  
+</body><!-- Fim do corpo --></html>
+<!-- Fim do documento -->
